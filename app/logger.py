@@ -1,9 +1,15 @@
 import sys
 from datetime import datetime
+from pathlib import Path
 
 from loguru import logger as _logger
 
-from app.config import PROJECT_ROOT
+
+def get_project_root() -> Path:
+    current_dir = Path(__file__).parent
+    return current_dir
+
+PROJECT_ROOT = get_project_root()
 
 _print_level = "INFO"
 
